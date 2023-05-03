@@ -1,0 +1,17 @@
+.box {
+	width: 75%;
+	background-color: white;
+	color: black;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 10px;
+	text-align: left;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.prodimg2 {
+	height: 300px;
+	padding-right: 10px;
+}
