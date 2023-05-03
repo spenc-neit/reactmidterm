@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useFetch } from "./hooks/useFetch";
-import { Box } from "./components/Box";
-import { Text } from "./components/Text";
+import { useFetch } from "../hooks/useFetch";
+import { Box } from "./Box";
+import { Text } from "./Text";
 import {
 	Link,
 	Route,
@@ -10,21 +10,21 @@ import {
 	BrowserRouter,
 } from "react-router-dom";
 
-function ReadAll() {
-	var { data: prods, loading, error } = useFetch("products");
+function Products() {
+	const { data: prods, loading, error } = useFetch("products");
 
 	if (error) {
 		return <p>An error occurred: {error}</p>;
 	}
 
 	if (loading) {
-		return <p>loading</p>;
+		return <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" style={{height:"50px"}} />;
 		//if loading is true, then return the element and stop running the code
 	}
 
 	const output = prods.map((entry) => {
         return(
-		<Box>
+		<Box key={entry.id}>
 			<img src={`${entry.image}`} className="prodimg" />
 			<Text color="navy" size="18px" link linkSrc={`${entry.id}`}>
 				{entry.title}
@@ -41,4 +41,4 @@ function ReadAll() {
 	);
 }
 
-export { ReadAll };
+export { Products };
