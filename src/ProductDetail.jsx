@@ -5,11 +5,9 @@ import { Box } from "./components/Box";
 import { Text } from "./components/Text";
 
 const ProductDetail = () =>{
-    console.log("-------------------PRODUCTDETAIL IS LOADING-----------------------")
     const {id} = useParams()
     // const id = props.id
     const {data:entry, loading, error} = useFetch("products/" + id)
-    console.log(entry, "entry")
 
     return(
         <>

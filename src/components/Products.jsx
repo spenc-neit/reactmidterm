@@ -32,8 +32,6 @@ function Products() {
 		</Box>)
 	});
 
-    console.log(output, "output")
-
 	return (
 		<>
 			<div style={{display:"initial"}}>{output}</div>
