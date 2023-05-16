@@ -3,19 +3,20 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { ReadAll } from "./readAll.jsx";
-import OneEntry from "./OneEntry.jsx";
+import { Products } from "./components/Products.jsx";
+import ProductDetail from "./ProductDetail.jsx";
+import Home from "./components/Home.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route index element={<App />} />
-				<Route path="prodview" element={<ReadAll />}>
-        {/* <Route path="prodview" element={<OneEntry id="1"/>}> */}
-					<Route path=":id" element={<OneEntry />} />
+				<Route path="/" element={<App />}>
+					<Route index element={<Home />} />
+					<Route path="home" element={<Home />} />
+					<Route path="products" element={<Products />} />
+					<Route path="products/:id" element={<ProductDetail />} />
 				</Route>
-				<Route path="*" element={<div>Route not found</div>} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>

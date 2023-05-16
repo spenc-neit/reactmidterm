@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.App{
+  width: 100%;
+}
+
+.navstyling{
+  display: flex;
+  justify-content: space-around;
+}
+
 .box{
   width:75%;
   background-color: white;
