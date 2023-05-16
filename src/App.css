@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+html{
+  height:auto;
+}
+
 .App{
   width: 100%;
 }
