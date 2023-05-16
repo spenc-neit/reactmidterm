@@ -21,7 +21,6 @@ function App() {
   const [selectValue, setSelectValue] = useState("light")
 
   const {changeTheme, theme} = useContext(ThemeContext);
-  console.log(useContext(ThemeContext), "usecontext")
 
   useEffect(() => {
     document.body.style.backgroundColor = theme.background;

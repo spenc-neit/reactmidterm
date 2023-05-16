@@ -39,7 +39,6 @@ export const ThemeContext = createContext({
 export const ThemeProvider = (props) => {
 	const [theme, setTheme] = useState(themes.light);
 	const changeTheme = (newtheme) => {
-		console.log(newtheme, "newtheme");
 		switch (newtheme) {
 			case "light":
 				setTheme(themes.light);
@@ -54,7 +53,6 @@ export const ThemeProvider = (props) => {
 		//if previous theme was dark, set to light. else, set to dark
 	};
 
-	console.log(theme, "theme in themeProvider");
 
 	return (
 		<ThemeContext.Provider value={{ theme, changeTheme }}>
