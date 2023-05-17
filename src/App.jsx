@@ -10,14 +10,6 @@ import { ThemeProvider } from "./ThemeContext";
 function App() {
   const navigate = useNavigate();
   
-  document.querySelector('html').setAttribute("style", "height:auto;")
-  //when I didn't have the above line, the background colors I set only filled the initial screen size - 
-    //past the initial screen size, it would be reset to black, my default for chrome, for the rest of the page.
-  //it seemed be the height of the HTML element causig issues, so I fixed it the only way I could think of, with JS.
-  //please let me know if there was a way I could have avoided this, or a better way to solve it, since this way isn't perfect 
-  //                                                                                 (it caused problems in Home and ProductDetail that I had to fix with more JS)
-  //or, I suppose, if this didn't fix it and it comes up somewhere else...
-
   const [selectValue, setSelectValue] = useState("light")
 
   const {changeTheme, theme} = useContext(ThemeContext);

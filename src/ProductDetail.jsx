@@ -12,10 +12,6 @@ const ProductDetail = () => {
 	const { data: entry, loading, error } = useFetch("products/" + id);
 	const {theme} = useContext(ThemeContext)
 
-	document.querySelector('html').setAttribute("style", "height:100%;")
-	//had to put this in here else the content would be vertically centered
-	//if you get here before app.jsx, go there, lines 13-17 for more info
-
 	if (entry.length != 0) {
 		return (
 			<Box detail>
@@ -28,10 +24,10 @@ const ProductDetail = () => {
 					<Text color={theme.detailcolor} size="20px">
 						{entry.category} - {entry.rating.rate} stars ({entry.rating.count}{" "} ratings)
 					</Text>
-					{/*I don't know what in the world is going with the line above but ProductDetail doesn't work at ALL until I comment it out and then un-comment it and then suddenly everything is fine. I'm gonna leave it commented out bc it isn't all that necessary but maybe you can tell me what's going on here, it makes no sense to me whatsoever*/}
 					<Text color={theme.foreground} size="18px">
 						{entry.description}
 					</Text>
+					<br />
 					<Text color={theme.foreground} size="20px">
 						${entry.price}
 					</Text>{" "}

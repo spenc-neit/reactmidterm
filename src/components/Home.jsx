@@ -5,10 +5,6 @@ function Home(){
 
     const {theme} = useContext(ThemeContext);
 
-    document.querySelector('html').setAttribute("style", "height:100%;")
-	//had to put this in here else the content would be vertically centered
-	//if you get here before app.jsx, go there, lines 13-17 for more info
-
     useEffect(() => {
         document.body.style.backgroundColor = theme.background;
     }, [theme]);
