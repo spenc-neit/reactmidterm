@@ -1,17 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 import { Box } from "./Box";
 import { Text } from "./Text";
-import {
-	Link,
-	Route,
-	Routes,
-	useNavigate,
-	BrowserRouter,
-} from "react-router-dom";
+import { ThemeContext } from "../ThemeContext";
 
 function Products() {
 	const { data: prods, loading, error } = useFetch("products");
+	const {theme} = useContext(ThemeContext)
 
 	if (error) {
 		return <p>An error occurred: {error}</p>;
@@ -26,7 +21,7 @@ function Products() {
         return(
 		<Box key={entry.id}>
 			<img src={`${entry.image}`} className="prodimg" />
-			<Text color="navy" size="18px" link linkSrc={`${entry.id}`}>
+			<Text color={theme.linkcolor} size="18px" link linkSrc={`${entry.id}`}>
 				{entry.title}
 			</Text>
 		</Box>)

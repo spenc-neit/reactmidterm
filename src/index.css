@@ -26,16 +26,15 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100%;
 }
-
+/*
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+*/
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -47,6 +46,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+/*
 button:hover {
   border-color: #646cff;
 }
@@ -97,6 +97,7 @@ body {
   line-height: 1.5;
   color: #121212;
 }
+*/
 textarea,
 input,
 button {
@@ -110,6 +111,7 @@ button {
   line-height: 1.5;
   margin: 0;
 }
+/*
 button {
   color: #3992ff;
   font-weight: 500;
@@ -449,4 +451,4 @@ i {
   align-items: center;
   justify-content: center;
   width: 100%;
-}
+} */
